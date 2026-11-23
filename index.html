@@ -315,7 +315,7 @@
   </main>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="contact">
+  <!-- <section id="contacto" class="contact">
     <div class="contact-inner">
       <p class="hero-eyebrow">// ¿Trabajamos juntos?</p>
       <h2>Hablemos</h2>
@@ -325,6 +325,37 @@
       </p>
       <div class="contact-actions">
         <a href="mailto:pablodemartini@gmail.com" class="btn btn-primary">pablodemartini@gmail.com</a>
+      </div>
+    </div>
+  </section> -->
+  <!-- CONTACTO CON FORMULARIO -->
+  <section id="contacto" class="contact">
+    <div class="contact-inner">
+      <p class="hero-eyebrow">// ¿Trabajamos juntos?</p>
+      <h2>Conversemos</h2>
+      <p class="contact-sub">
+        Estoy abierto a oportunidades Jr. / Trainee en desarrollo de software.
+        Dejame tu mensaje o escribime directamente.
+      </p>
+
+      <!-- Formulario de contacto -->
+      <form class="contact-form" action="https://formspree.io/f/mgakpnjd" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="4" placeholder="¿Qué te gustaría decirme?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Enviar mensaje →</button>
+      </form>
+
+      <!-- Opción alternativa por si prefieren copiar el mail -->
+      <div class="contact-direct">
+        <span>O escribime a: </span>
+        <a href="mailto:pablodemartini@gmail.com" class="email-link">pablodemartini@gmail.com</a>
       </div>
     </div>
   </section>
