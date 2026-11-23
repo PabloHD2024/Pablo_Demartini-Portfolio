@@ -57,14 +57,8 @@ body {
   align-items: center;
 }
 
-.logo {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--accent);
-  text-decoration: none;
-  list-style: none;
-  letter-spacing: 0.5px;
+.logo img{
+  width: 150px;
 }
 
 .nav-links {
