@@ -15,10 +15,18 @@
   <nav class="navbar">
     <div class="nav-inner">
       <a href="#hero" class="logo">&lt;PD /&gt;</a>
-      <ul class="nav-links">
+
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#stack">Stack</a></li>
-        <li><a href="#proyectos">Formación</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#formacion">Formación</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#contacto" class="btn-nav">Contacto</a></li>
       </ul>
@@ -46,7 +54,7 @@
         </div>
       </div>
       <div class="hero-img">
-        <img src="./img/PabloDemartini.jpeg" alt="">
+        <img src="./img/PabloDemartini.jpeg" alt="Pablo Hernán Demartini">
       </div>
     </div>
   </header>
@@ -68,11 +76,19 @@
       </p>
     </section>
 
-    <!-- STACK -->
+    <!-- STACK TÉCNICO CON FILTROS -->
     <section id="stack" class="card">
       <h2><span class="num">02.</span> Stack técnico</h2>
+
+      <div class="filter-bar" id="stack-filters">
+        <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+        <button type="button" class="filter-btn" data-filter="backend">Backend</button>
+        <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+        <button type="button" class="filter-btn" data-filter="tools">Herramientas &amp; Diseño</button>
+      </div>
+
       <div class="stack-grid">
-        <div class="stack-item">
+        <div class="stack-item" data-category="backend frontend">
           <h3>Lenguajes</h3>
           <ul class="tags">
             <li>Java</li>
@@ -82,23 +98,25 @@
             <li>CSS3</li>
           </ul>
         </div>
-        <div class="stack-item">
+        <div class="stack-item" data-category="backend frontend">
           <h3>Frameworks &amp; Librerías</h3>
           <ul class="tags">
             <li>React</li>
             <li>Spring (básico)</li>
+            <li>Node.js / Express</li>
           </ul>
         </div>
-        <div class="stack-item">
+        <div class="stack-item" data-category="tools">
           <h3>Herramientas</h3>
           <ul class="tags">
             <li>Git</li>
             <li>GitHub</li>
             <li>VS Code</li>
+            <li>Docker</li>
             <li>Figma (básico)</li>
           </ul>
         </div>
-        <div class="stack-item">
+        <div class="stack-item" data-category="tools">
           <h3>Diseño</h3>
           <ul class="tags">
             <li>Photoshop</li>
@@ -109,9 +127,93 @@
       </div>
     </section>
 
-    <!-- FORMACIÓN -->
+    <!-- PROYECTOS DESTACADOS -->
     <section id="proyectos" class="card">
-      <h2><span class="num">03.</span> Formación &amp; Cursos</h2>
+      <h2><span class="num">03.</span> Proyectos destacados</h2>
+
+      <div class="filter-bar" id="project-filters">
+        <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+        <button type="button" class="filter-btn" data-filter="backend">Backend / APIs</button>
+        <button type="button" class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <article class="project-card" data-category="backend">
+          <div class="project-header">
+            <span class="project-folder">📁 API REST</span>
+            <div class="project-links">
+              <a href="https://github.com/pablodemartini" target="_blank" rel="noopener" aria-label="Código en GitHub">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>Forensics API</h3>
+          <p>API REST para gestión de peritos forenses con borrado lógico (Soft Delete), logging de peticiones y persistencia relacional.</p>
+          <ul class="tags project-tags">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>Sequelize</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="project-card" data-category="fullstack">
+          <div class="project-header">
+            <span class="project-folder">📁 E-Commerce</span>
+            <div class="project-links">
+              <a href="https://github.com/pablodemartini" target="_blank" rel="noopener" aria-label="Código en GitHub">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>Sistema E-Commerce &amp; Carrito</h3>
+          <p>Aplicación web full stack con validación de cupones de descuento, gestión de pedidos y generación de tickets.</p>
+          <ul class="tags project-tags">
+            <li>JavaScript</li>
+            <li>Express</li>
+            <li>SQLite</li>
+            <li>Sequelize</li>
+          </ul>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card" data-category="backend">
+          <div class="project-header">
+            <span class="project-folder">📁 Arquitectura</span>
+            <div class="project-links">
+              <a href="https://github.com/pablodemartini" target="_blank" rel="noopener" aria-label="Código en GitHub">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>Arquitectura de Microservicios</h3>
+          <p>Sistema distribuido con API Gateway y servicios independientes para usuarios, productos, clientes y pedidos.</p>
+          <ul class="tags project-tags">
+            <li>Node.js</li>
+            <li>Microservicios</li>
+            <li>API Gateway</li>
+          </ul>
+        </article>
+
+        <!-- Proyecto 4 -->
+        <article class="project-card" data-category="frontend">
+          <div class="project-header">
+            <span class="project-folder">📁 Web App</span>
+            <div class="project-links">
+              <a href="https://github.com/pablodemartini" target="_blank" rel="noopener" aria-label="Código en GitHub">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>Tienda Online Yerba Mate</h3>
+          <p>Storefront responsivo diseñado desde cero con catálogo interactivo, filtros dinámicos y experiencia de compra fluida.</p>
+          <ul class="tags project-tags">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion" class="card">
+      <h2><span class="num">04.</span> Formación &amp; Cursos</h2>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
@@ -150,7 +252,7 @@
 
     <!-- EXPERIENCIA -->
     <section id="experiencia" class="card">
-      <h2><span class="num">04.</span> Experiencia</h2>
+      <h2><span class="num">05.</span> Experiencia</h2>
 
       <article class="exp">
         <header>
@@ -203,7 +305,7 @@
 
     <!-- IDIOMAS -->
     <section id="idiomas" class="card">
-      <h2><span class="num">05.</span> Idiomas</h2>
+      <h2><span class="num">06.</span> Idiomas</h2>
       <ul class="tags">
         <li>Inglés — Avanzado</li>
         <li>Español — Nativo</li>
@@ -231,5 +333,7 @@
     <p>© 2026 Pablo Hernán Demartini · Portfolio Dev</p>
   </footer>
 
+  <!-- SCRIPT DE JAVASCRIPT -->
+  <script src="./js/main.js"></script>
 </body>
-</html>https://github.com/PabloHD2024/Portfolio_PHD.git
+</html>
